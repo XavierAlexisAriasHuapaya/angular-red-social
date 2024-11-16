@@ -36,7 +36,15 @@
                 <fa-icon [icon]="faBell"></fa-icon>
             </li>
             <li class="item user">
-                <fa-icon [icon]="faUser"></fa-icon>
+                <fa-icon [icon]="faUser" [matMenuTriggerFor]="afterMenu"></fa-icon>
+                <mat-menu #afterMenu="matMenu" xPosition="after">
+                    <button mat-menu-item (click)="logOut()">
+                        <div class="item-singout">
+                            <fa-icon [icon]="faClose"></fa-icon>
+                            <label for="">Log Out</label>
+                        </div>
+                    </button>
+                </mat-menu>
             </li>
         </ul>
     </nav>

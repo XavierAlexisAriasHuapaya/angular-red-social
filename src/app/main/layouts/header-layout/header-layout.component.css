@@ -88,3 +88,17 @@ fa-icon {
     background-color: #b6babf;
     box-shadow: 0 0 10px #8d9095;
 }
+
+.item-singout {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.5rem;
+}
+
+.item-singout label {
+    cursor: pointer;
+}
+
+.item-singout fa-icon{
+    color: black;
+}
