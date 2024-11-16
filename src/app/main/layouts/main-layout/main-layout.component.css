@@ -1,30 +1,30 @@
-.grid-container{
+.grid-container {
     display: grid;
-    grid-template-areas: 
-    "header header header"
-    "aside body body"
-    "footer footer footer";
+    grid-template-areas:
+        "header header header"
+        "aside body body"
+        "footer footer footer";
     grid-template-columns: 1fr 4fr 4fr;
     grid-template-rows: auto 2fr auto;
     min-height: 100vh;
 }
 
-.area-header{
+.area-header {
     grid-area: header;
     background-color: white;
 }
 
-.area-aside{
+.area-aside {
     grid-area: aside;
-    background-color: blue;
+    background-color: #F2F4F7;
 }
 
-.area-body{
+.area-body {
     grid-area: body;
     background-color: green;
 }
 
-.area-footer{
+.area-footer {
     grid-area: footer;
     background-color: yellow;
 }
