@@ -8,11 +8,6 @@ export const routes: Routes = [
             {
                 path: 'chat',
                 loadComponent: () => import('./pages/chat/chat.component').then(c => c.ChatComponent)
-            },
-            {
-                path: '**',
-                redirectTo: 'chat',
-                pathMatch: 'full'
             }
         ]
     }

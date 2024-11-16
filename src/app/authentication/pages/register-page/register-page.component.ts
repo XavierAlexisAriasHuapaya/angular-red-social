@@ -36,7 +36,7 @@ export class RegisterPageComponent {
         this.router.navigateByUrl('/auth/login');
       },
       error: (err) => {
-        console.log(`Error: ${err}`);
+
       }
     })
   }

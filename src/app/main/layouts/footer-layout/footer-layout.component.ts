@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer-layout.component.css'
 })
 export class FooterLayoutComponent {
-
+  year: number = new Date().getFullYear();
 }

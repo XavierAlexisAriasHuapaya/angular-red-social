@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBell, faGear, faHome, faMessage, faPeopleGroup, faShop, faUser, faUserGroup, faVideo } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,4 +20,11 @@ export class HeaderLayoutComponent {
   faMessage = faMessage;
   faBell = faBell;
   faUser = faUser;
+
+  private router = inject(Router);
+
+  openHome() {
+    this.router.navigateByUrl('/home');
+  }
+
 }

@@ -1,0 +1,9 @@
+p {
+    font-size: 1.3rem;
+    /* font-weight: 700; */
+    text-align: center;
+}
+
+.container {
+    border-top: 0.3rem solid #F0F2F5;
+}
