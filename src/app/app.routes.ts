@@ -14,7 +14,7 @@ export const routes: Routes = [
         loadChildren: () => import('./dashboard/app.authentication.routes').then(c => c.routes)
     },
     {
-        path: '',
+        path: '**',
         redirectTo: 'auth',
         pathMatch: 'full'
     }

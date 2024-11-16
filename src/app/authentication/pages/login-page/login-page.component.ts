@@ -3,13 +3,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthenticationService } from '../../services/authentication.service';
 import { LoginRequest } from '../../interfaces/login-request.interface';
 import { HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule, RouterLink],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })

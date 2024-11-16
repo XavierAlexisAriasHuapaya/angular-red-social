@@ -1,7 +1,8 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthenticationService } from './authentication/services/authentication.service';
 import { AuthenticationStatus } from './authentication/interfaces/authentication-status.enum';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,9 +24,7 @@ export class AppComponent {
         this.router.navigateByUrl('/dashboard');
         return;
       case AuthenticationStatus.notAuthenticated:
-        this.router.navigateByUrl('/auth/login');
         return;
-
     }
   });
 
