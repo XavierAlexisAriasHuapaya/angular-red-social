@@ -4,6 +4,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { LoginRequest } from '../../interfaces/login-request.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login-page',
@@ -33,7 +34,11 @@ export class LoginPageComponent {
     this.authenticationService.login(this.loginRequest).subscribe({
       next: () => this.router.navigateByUrl('/dashboard'),
       error: (message) => {
-        console.log(`Error: ${message}`);
+        Swal.fire({
+          title: "Error",
+          text: `${message}`,
+          icon: "error"
+        });
       }
     })
   }

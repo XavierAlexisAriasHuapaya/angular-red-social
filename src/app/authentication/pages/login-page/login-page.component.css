@@ -31,14 +31,21 @@ input {
     flex-direction: column;
 }
 
+.container-forgot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
 .container-forgot a {
     font-size: 1.5rem;
-    color: #FFF;
+    color: #fff;
     text-decoration: none;
 }
 
 .container-forgot a:hover {
-    color: black;
+    color: rgb(199, 196, 196);
 }
 
 .container-button {
