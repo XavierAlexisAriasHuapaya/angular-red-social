@@ -9,9 +9,9 @@ export const routes: Routes = [
         loadChildren: () => import('./authentication/app.authentication.routes').then(c => c.routes)
     },
     {
-        path: 'dashboard',
+        path: 'main',
         canActivate: [isAuthenticatedGuard],
-        loadChildren: () => import('./dashboard/app.authentication.routes').then(c => c.routes)
+        loadChildren: () => import('./main/app.main.routes').then(c => c.routes)
     },
     {
         path: '**',

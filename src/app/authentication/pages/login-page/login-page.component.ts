@@ -32,7 +32,7 @@ export class LoginPageComponent {
       password: password
     };
     this.authenticationService.login(this.loginRequest).subscribe({
-      next: () => this.router.navigateByUrl('/dashboard'),
+      next: () => this.router.navigateByUrl('/main'),
       error: (message) => {
         Swal.fire({
           title: "Error",
