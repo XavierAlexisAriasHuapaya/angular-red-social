@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="login()">
+    <div class="container-login">
+        <div class="container-credentials">
+            <label for="username">Username</label>
+            <input formControlName="email" type="text" class="username" name="username" autocomplete="off"
+                placeholder="Enter your user">
+        </div>
+        <div class="container-credentials">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" class="password" name="password"
+                placeholder="Enter your password">
+        </div>
+        <div class="container-forgot">
+            <a href="">Forgot password?</a>
+        </div>
+        <div class="container-button">
+            <button type="submit">Sign In</button>
+        </div>
+    </div>
+</form>
