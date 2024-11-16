@@ -16,9 +16,11 @@ export class AuthenticationService {
   private httpClient = inject(HttpClient);
 
   private _currentUsername = signal<string | ''>('');
+  private _currentUserId = signal<number | 0>(0);
   private _authStatus = signal<AuthenticationStatus>(AuthenticationStatus.checking);
 
   public currentUsername = computed(() => this._currentUsername());
+  public currentUserId = computed(() => this._currentUserId());
   public authStatus = computed(() => this._authStatus());
 
   constructor() {
@@ -27,7 +29,9 @@ export class AuthenticationService {
 
   private setAuthentication(response: LoginResponse): boolean {
     const subject = this.getDecodeToken(response.jwt).sub ?? '';
+    const userId = this.getDecodeToken(response.jwt).userId ?? 0;
     this._currentUsername.set(subject);
+    this._currentUserId.set(userId);
     this._authStatus.set(AuthenticationStatus.authenticated);
     localStorage.setItem("token", response.jwt);
     return true;
@@ -74,8 +78,8 @@ export class AuthenticationService {
     this._authStatus.set(AuthenticationStatus.notAuthenticated);
   }
 
-  private getDecodeToken(jwt: string): jwtDecode.JwtPayload {
-    const payload = jwtDecode.jwtDecode(jwt);
+  private getDecodeToken(jwt: string): any {
+    const payload: any = jwtDecode.jwtDecode(jwt);
     return payload;
   }
 

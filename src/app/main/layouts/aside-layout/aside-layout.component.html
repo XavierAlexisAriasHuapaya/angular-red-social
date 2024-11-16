@@ -13,35 +13,13 @@
         </div>
     </div>
     <div class="flex-friends">
+        @for (user of userPage; track $index) {
         <div class="flex-friend" (click)="openChat()">
             <div class="custom-badge" matBadge="." matBadgeSize="small" matBadgePosition="below after">
-                <img src="../../../../assets/images/john-cena.jpg" alt="">
+                <img [src]="'../../../../assets/images/user_' + user.id + '.jpg'" alt="User image">
             </div>
-            <label for="">John Cena</label>
+            <label for="">{{ user.username }}</label>
         </div>
-        <div class="flex-friend" (click)="openChat()">
-            <div class="custom-badge" matBadge="." matBadgeSize="small" matBadgePosition="below after">
-                <img src="../../../../assets/images/carlota.jpg" alt="">
-            </div>
-            <label for="">La Carlota</label>
-        </div>
-        <div class="flex-friend" (click)="openChat()">
-            <div class="custom-badge" matBadge="." matBadgeSize="small" matBadgePosition="below after">
-                <img src="../../../../assets/images/melcochita.png" alt="">
-            </div>
-            <label for="">Melcochita</label>
-        </div>
-        <div class="flex-friend" (click)="openChat()">
-            <div class="custom-badge" matBadge="." matBadgeSize="small" matBadgePosition="below after">
-                <img src="../../../../assets/images/nicola_porcella.jpg" alt="">
-            </div>
-            <label for="">Nicola Porcella</label>
-        </div>
-        <div class="flex-friend" (click)="openChat()">
-            <div class="custom-badge" matBadge="." matBadgeSize="small" matBadgePosition="below after">
-                <img src="../../../../assets/images/sullysaenz.jpg" alt="">
-            </div>
-            <label for="">Sully Saenz</label>
-        </div>
+        }
     </div>
 </div>
