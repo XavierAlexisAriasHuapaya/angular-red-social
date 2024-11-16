@@ -1,1 +1,22 @@
-<p>register-page works!</p>
+<form [formGroup]="formRegister" (submit)="register()">
+    <div class="container-register">
+        <div class="container-data">
+            <label for="username">Username</label>
+            <input formControlName="username" type="text" class="username" name="username" autocomplete="off"
+                placeholder="Enter your user">
+        </div>
+        <div class="container-data">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" class="password" name="password"
+                placeholder="Enter your password">
+        </div>
+        <div class="container-data full-width">
+            <label for="username">Email</label>
+            <input formControlName="email" type="text" class="email" name="email" autocomplete="off"
+                placeholder="Enter your email">
+        </div>
+    </div>
+    <div class="container-button">
+        <button type="submit">Join Now</button>
+    </div>
+</form>
