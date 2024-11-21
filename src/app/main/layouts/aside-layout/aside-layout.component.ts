@@ -29,8 +29,9 @@ export class AsideLayoutComponent implements OnInit {
     this.getUsersExcludeId();
   }
 
-  openChat() {
-    this.router.navigateByUrl('/main/chat');
+  openChat(userId: number) {
+    this.router.navigate(['/main/chat', userId]);
+    // this.router.navigateByUrl('/main/chat');
   }
 
   getUsersExcludeId() {

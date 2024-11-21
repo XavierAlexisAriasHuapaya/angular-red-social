@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { AuthenticationService } from '../../authentication/services/authentication.service';
 import { UserPagination } from '../interfaces/user-pagination.interface';
+import { User } from '../../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,15 @@ export class UserService {
           return data.content;
         })
       );
+  }
+
+  getUser(userId: number): Observable<User> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    })
+    const url = `${this.baseUrl}/user/${userId}`;
+    return this.httpClient.get<any>(url, { headers });
   }
 
 }

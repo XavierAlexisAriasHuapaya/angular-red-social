@@ -6,7 +6,7 @@ export const routes: Routes = [
         loadComponent: () => import('./layouts/main-layout/main-layout.component').then(c => c.MainLayoutComponent),
         children: [
             {
-                path: 'chat',
+                path: 'chat/:id',
                 loadComponent: () => import('./pages/chat/chat.component').then(c => c.ChatComponent)
             }
         ]

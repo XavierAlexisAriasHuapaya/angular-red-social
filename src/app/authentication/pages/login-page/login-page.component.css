@@ -59,7 +59,7 @@ input {
     border-radius: 20px;
     border-style: none;
     color: white;
-    background: linear-gradient(#bd67ef, #7714b1);
+    background: linear-gradient(#00804b, #a5eacd);
     height: 3rem;
     cursor: pointer;
     transition: 0.5s ease;
@@ -67,7 +67,7 @@ input {
 }
 
 .container-button button:hover {
-    background: linear-gradient(#cd8ff1, #7e25b1);
+    background: linear-gradient(#a5eacd, #00804b);
     transform: scale(1.05);
 }
 

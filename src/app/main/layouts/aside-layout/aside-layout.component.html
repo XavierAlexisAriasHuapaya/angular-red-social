@@ -14,7 +14,7 @@
     </div>
     <div class="flex-friends">
         @for (user of userPage; track $index) {
-        <div class="flex-friend" (click)="openChat()">
+        <div class="flex-friend" (click)="openChat(user.id)">
             <div class="custom-badge" matBadge="." matBadgeSize="small" matBadgePosition="below after">
                 <img [src]="'../../../../assets/images/user_' + user.id + '.jpg'" alt="User image">
             </div>

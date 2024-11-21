@@ -23,8 +23,11 @@
     "@fortawesome/angular-fontawesome": "^0.14.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@stomp/stompjs": "^7.0.0",
+    "@types/sockjs-client": "^1.5.4",
     "jwt-decode": "^4.0.0",
     "rxjs": "~7.8.0",
+    "sockjs-client": "^1.6.1",
     "sweetalert2": "^11.14.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
