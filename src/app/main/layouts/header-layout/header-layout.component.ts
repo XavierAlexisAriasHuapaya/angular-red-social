@@ -1,21 +1,18 @@
-import { Component, Inject, inject, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatMenuModule } from '@angular/material/menu';
 import { faBell, faGear, faHome, faMessage, faPeopleGroup, faRightFromBracket, faShop, faUser, faUserGroup, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../../authentication/services/authentication.service';
-import { ChatNotificationLayoutComponent } from "../chat-notification-layout/chat-notification-layout.component";
-import { ChatNotificationDirective } from '../../directives/chat-notification.directive';
 
 @Component({
-    selector: 'app-header-layout',
-    imports: [FontAwesomeModule, MatMenuModule, ChatNotificationLayoutComponent, ChatNotificationDirective],
-    templateUrl: './header-layout.component.html',
-    styleUrl: './header-layout.component.css'
+  selector: 'app-header-layout',
+  imports: [FontAwesomeModule, MatMenuModule],
+  templateUrl: './header-layout.component.html',
+  styleUrl: './header-layout.component.css'
 })
 export class HeaderLayoutComponent {
 
-  @ViewChild(ChatNotificationLayoutComponent) chatNofitication!: ChatNotificationLayoutComponent;
 
   public faHome = faHome;
   public faUserGroup = faUserGroup;
@@ -34,12 +31,12 @@ export class HeaderLayoutComponent {
   public notificationsVisible: boolean = true;
 
   public openChat() {
-    this.chatNofitication.enabledChat(this.notificationsVisible);
+    // this.chatNofitication.enabledChat(this.notificationsVisible);
     this.notificationsVisible = !this.notificationsVisible;
   }
 
   public clickOutside() {
-    this.chatNofitication.clickOutside();
+    // this.chatNofitication.clickOutside();
     this.notificationsVisible = true;
   }
 
