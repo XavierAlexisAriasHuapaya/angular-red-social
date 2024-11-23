@@ -8,11 +8,10 @@ import { ChatNotificationLayoutComponent } from "../chat-notification-layout/cha
 import { ChatNotificationDirective } from '../../directives/chat-notification.directive';
 
 @Component({
-  selector: 'app-header-layout',
-  standalone: true,
-  imports: [FontAwesomeModule, MatMenuModule, ChatNotificationLayoutComponent, ChatNotificationDirective],
-  templateUrl: './header-layout.component.html',
-  styleUrl: './header-layout.component.css'
+    selector: 'app-header-layout',
+    imports: [FontAwesomeModule, MatMenuModule, ChatNotificationLayoutComponent, ChatNotificationDirective],
+    templateUrl: './header-layout.component.html',
+    styleUrl: './header-layout.component.css'
 })
 export class HeaderLayoutComponent {
 

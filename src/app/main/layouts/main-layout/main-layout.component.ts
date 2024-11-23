@@ -6,11 +6,10 @@ import { FooterLayoutComponent } from "../footer-layout/footer-layout.component"
 import { AsideLayoutComponent } from "../aside-layout/aside-layout.component";
 
 @Component({
-  selector: 'app-main-layout',
-  standalone: true,
-  imports: [HeaderLayoutComponent, BodyLayoutComponent, FooterLayoutComponent, AsideLayoutComponent],
-  templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.css'
+    selector: 'app-main-layout',
+    imports: [HeaderLayoutComponent, BodyLayoutComponent, FooterLayoutComponent, AsideLayoutComponent],
+    templateUrl: './main-layout.component.html',
+    styleUrl: './main-layout.component.css'
 })
 export class MainLayoutComponent {
 

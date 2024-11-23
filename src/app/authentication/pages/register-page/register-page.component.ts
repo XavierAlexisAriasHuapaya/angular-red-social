@@ -5,11 +5,10 @@ import { registerRequest } from '../../interfaces/register-request.interface';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register-page',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './register-page.component.html',
-  styleUrl: './register-page.component.css'
+    selector: 'app-register-page',
+    imports: [ReactiveFormsModule],
+    templateUrl: './register-page.component.html',
+    styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
 

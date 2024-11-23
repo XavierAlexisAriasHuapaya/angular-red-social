@@ -15,11 +15,10 @@ import { MessageCreate } from '../../interfaces/message-create.interface';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
-  selector: 'app-chat',
-  standalone: true,
-  imports: [FontAwesomeModule, FormsModule, CommonModule],
-  templateUrl: './chat.component.html',
-  styleUrl: './chat.component.css'
+    selector: 'app-chat',
+    imports: [FontAwesomeModule, FormsModule, CommonModule],
+    templateUrl: './chat.component.html',
+    styleUrl: './chat.component.css'
 })
 export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
 

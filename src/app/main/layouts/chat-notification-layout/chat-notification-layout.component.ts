@@ -4,11 +4,10 @@ import { faEllipsis, faMaximize, faPenToSquare } from '@fortawesome/free-solid-s
 import { ChatNotificationDirective } from '../../directives/chat-notification.directive';
 
 @Component({
-  selector: 'app-chat-notification-layout',
-  standalone: true,
-  imports: [FontAwesomeModule],
-  templateUrl: './chat-notification-layout.component.html',
-  styleUrl: './chat-notification-layout.component.css'
+    selector: 'app-chat-notification-layout',
+    imports: [FontAwesomeModule],
+    templateUrl: './chat-notification-layout.component.html',
+    styleUrl: './chat-notification-layout.component.css'
 })
 export class ChatNotificationLayoutComponent {
 
