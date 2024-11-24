@@ -32,7 +32,8 @@
     </div>
     <div class="chat-message">
         @for (item of chats; track $index) {
-        <div class="profile" [class.profile-message-active]="!item.message.seen">
+        <div class="profile" [class.profile-message-active]="!item.message.seen"
+            (click)="openChat(item.chat.chatMembers[0].user.id)">
             <img [src]="'../../../../assets/images/user_' + item.chat.chatMembers[0].user.id + '.jpg'" alt="User image">
             <div class="messages">
                 <div class="user">

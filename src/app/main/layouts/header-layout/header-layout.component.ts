@@ -49,7 +49,7 @@ export class HeaderLayoutComponent {
       const keydownListener = (event: KeyboardEvent) => {
         if (event.key === 'Escape') {
           overlayRef.detach();
-          document.removeEventListener('keydown', keydownListener); // Limpieza
+          document.removeEventListener('keydown', keydownListener);
         }
       };
       document.addEventListener('keydown', keydownListener);

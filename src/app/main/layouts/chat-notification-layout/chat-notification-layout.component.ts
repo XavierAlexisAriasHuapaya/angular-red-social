@@ -4,6 +4,7 @@ import { faEllipsis, faMaximize, faPenToSquare } from '@fortawesome/free-solid-s
 import { ChatService } from '../../services/chat.service';
 import { ChatAllUser } from '../../interfaces/chat-all-user.interface';
 import { AuthenticationService } from '../../../authentication/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat-notification-layout',
@@ -15,6 +16,7 @@ export class ChatNotificationLayoutComponent implements OnInit {
 
   private _chatService = inject(ChatService);
   private _authenticationService = inject(AuthenticationService);
+  private _router = inject(Router);
 
   public faMaximize = faMaximize;
   public faEllipsis = faEllipsis;
@@ -31,6 +33,17 @@ export class ChatNotificationLayoutComponent implements OnInit {
     });
   }
 
-
+  public openChat(userId: number) {
+    this._router.navigate(['/main/chat', userId])
+    const escapeEvent = new KeyboardEvent('keydown', {
+      key: 'Escape',
+      code: 'Escape',
+      bubbles: true,
+      cancelable: true,
+    });
+    document.addEventListener('keydown', (event) => {
+    });
+    document.dispatchEvent(escapeEvent);
+  }
 
 }
