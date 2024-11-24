@@ -30,7 +30,6 @@ export class AsideLayoutComponent implements OnInit {
 
   openChat(userId: number) {
     this.router.navigate(['/main/chat', userId]);
-    // this.router.navigateByUrl('/main/chat');
   }
 
   getUsersExcludeId() {

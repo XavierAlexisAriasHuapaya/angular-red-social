@@ -57,7 +57,7 @@ export class ChatService {
       map(data => {
         data.forEach(chat => {
           chat.chat.chatMembers = chat.chat.chatMembers.filter(member => member.user.id !== userId);
-          chat.chat.name = chat.chat.chatMembers.length == 1 ? chat.chat.chatMembers[0].user.username : 'Group';
+          chat.chat.name = chat.chat.chatMembers.length == 1 ? chat.chat.chatMembers[0].user.name : 'Group';
         });
         return data;
       })

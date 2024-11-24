@@ -5,6 +5,8 @@ export class UserModel {
     username!: string;
     password!: string;
     email!: string;
+    name!: string;
+    lastName!: string;
     rol!: RolModel;
     createdAt!: Date;
     updatedAt!: Date;
