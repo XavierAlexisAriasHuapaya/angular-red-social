@@ -27,7 +27,6 @@ export class ChatNotificationLayoutComponent implements OnInit {
   ngOnInit(): void {
     this._chatService.getChatAllByUser(this._authenticationService.currentUserId()).subscribe({
       next: (data) => {
-        console.log(data);
         this.chats = data;
       }
     });

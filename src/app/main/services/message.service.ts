@@ -95,5 +95,14 @@ export class MessageService {
     }
   }
 
+  public updateSeen(messageId: number): Observable<void> {
+    const url = `${this._baseUrl}/message/seen/${messageId}`;
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this._httpClient.put<void>(url, null, { headers });
+  }
+
 
 }

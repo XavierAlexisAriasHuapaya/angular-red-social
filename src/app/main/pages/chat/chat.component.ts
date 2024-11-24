@@ -118,6 +118,7 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
           this._chatId = data.id;
           this._messageService.joinRoom(this._roomCode);
           this._messageService.getAllMessage(this._chatId, this._authenticationService.currentUserId()).subscribe();
+          this._chatService.getChatOneByUser(this._chatId, this._authenticationService.currentUserId()).subscribe();
           this.listenerMessage();
           this.scrollToBottom();
         }
