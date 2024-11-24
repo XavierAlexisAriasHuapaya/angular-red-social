@@ -6,6 +6,7 @@ import { ChatOne } from '../interfaces/chat-one.interface';
 import { AuthenticationService } from '../../authentication/services/authentication.service';
 import { ChatCreate } from '../interfaces/chat-create.interfaces';
 import { ResponseData } from '../interfaces/response-data.interface';
+import { ChatAllUser } from '../interfaces/chat-all-user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ChatService {
 
   constructor() { }
 
-  saveChat(chat: ChatCreate): Observable<ResponseData> {
+  public saveChat(chat: ChatCreate): Observable<ResponseData> {
     const url = `${this.baseUrl}/chat`;
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -27,7 +28,7 @@ export class ChatService {
     return this.httpClient.post<ResponseData>(url, chat, { headers });
   }
 
-  getChatByUsers(userIdTwo: number): Observable<ChatOne | null> {
+  public getChatByUsers(userIdTwo: number): Observable<ChatOne | null> {
     const userIdOne = this.authenticationService.currentUserId();
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -43,6 +44,24 @@ export class ChatService {
           return chat;
         })
       );
+  }
+
+  public getChatAllByUser(userId: number): Observable<ChatAllUser[]> {
+    const userIdOne = this.authenticationService.currentUserId();
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    })
+    const url = `${this.baseUrl}/chat/user/${userId}`;
+    return this.httpClient.get<ChatAllUser[]>(url, { headers }).pipe(
+      map(data => {
+        data.forEach(chat => {
+          chat.chat.chatMembers = chat.chat.chatMembers.filter(member => member.user.id !== userId);
+          chat.chat.name = chat.chat.chatMembers.length == 1 ? chat.chat.chatMembers[0].user.username : 'Group';
+        });
+        return data;
+      })
+    )
   }
 
 }

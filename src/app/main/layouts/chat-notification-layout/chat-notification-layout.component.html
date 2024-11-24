@@ -31,97 +31,18 @@
         </div>
     </div>
     <div class="chat-message">
+        @for (item of chats; track $index) {
         <div class="profile">
-            <img src="../../../../assets/images/user_5.jpg" alt="">
+            <img [src]="'../../../../assets/images/user_' + item.chat.chatMembers[0].user.id + '.jpg'" alt="User image">
             <div class="messages">
                 <div class="user">
-                    <label for="">Nicola Porcella</label>
+                    <label for="">{{item.chat.name}}</label>
                 </div>
                 <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum at esse
-                        nemo totam amet, praesentium eum iusto odio, distinctio placeat doloremque dignissimos? Non
-                        ducimus cum a hic assumenda error debitis?</p>
+                    <p class="text-ellipsis">{{item.message.content}}</p>
                 </div>
             </div>
         </div>
-        <div class="profile">
-            <img src="../../../../assets/images/user_2.jpg" alt="">
-            <div class="messages">
-                <div class="user">
-                    <label for="">John Cena</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis eos
-                        quidem magni ad. Fugit nisi, nihil velit, quidem, natus nostrum incidunt et ad nam beatae in
-                        magnam ea aliquid mollitia.</p>
-                </div>
-            </div>
-        </div>
-        <div class="profile">
-            <img src="../../../../assets/images/user_1.jpg" alt="">
-            <div class="messages">
-                <div class="user">
-                    <label for="">La Carlota</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse dolorum quos
-                        eaque, alias, ipsa a, architecto libero laboriosam facilis incidunt nam doloremque tempore.
-                        Possimus repellendus veritatis iure quam cumque sed!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="profile">
-            <img src="../../../../assets/images/user_5.jpg" alt="">
-            <div class="messages">
-                <div class="user">
-                    <label for="">Nicola Porcella</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum at esse
-                        nemo totam amet, praesentium eum iusto odio, distinctio placeat doloremque dignissimos? Non
-                        ducimus cum a hic assumenda error debitis?</p>
-                </div>
-            </div>
-        </div>
-        <div class="profile">
-            <img src="../../../../assets/images/user_1.jpg" alt="">
-            <div class="messages">
-                <div class="user">
-                    <label for="">La Carlota</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse dolorum quos
-                        eaque, alias, ipsa a, architecto libero laboriosam facilis incidunt nam doloremque tempore.
-                        Possimus repellendus veritatis iure quam cumque sed!</p>
-                </div>
-            </div>
-        </div>
-        <div class="profile">
-            <img src="../../../../assets/images/user_2.jpg" alt="">
-            <div class="messages">
-                <div class="user">
-                    <label for="">John Cena</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis eos
-                        quidem magni ad. Fugit nisi, nihil velit, quidem, natus nostrum incidunt et ad nam beatae in
-                        magnam ea aliquid mollitia.</p>
-                </div>
-            </div>
-        </div>
-        <div class="profile">
-            <img src="../../../../assets/images/user_1.jpg" alt="">
-            <div class="messages">
-                <div class="user">
-                    <label for="">La Carlota</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse dolorum quos
-                        eaque, alias, ipsa a, architecto libero laboriosam facilis incidunt nam doloremque tempore.
-                        Possimus repellendus veritatis iure quam cumque sed!</p>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
