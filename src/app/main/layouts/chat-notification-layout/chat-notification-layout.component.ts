@@ -3,6 +3,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEllipsis, faMaximize, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { ChatService } from '../../services/chat.service';
 import { ChatAllUser } from '../../interfaces/chat-all-user.interface';
+import { AuthenticationService } from '../../../authentication/services/authentication.service';
 
 @Component({
   selector: 'app-chat-notification-layout',
@@ -13,6 +14,7 @@ import { ChatAllUser } from '../../interfaces/chat-all-user.interface';
 export class ChatNotificationLayoutComponent implements OnInit {
 
   private _chatService = inject(ChatService);
+  private _authenticationService = inject(AuthenticationService);
 
   public faMaximize = faMaximize;
   public faEllipsis = faEllipsis;
@@ -21,7 +23,7 @@ export class ChatNotificationLayoutComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {
-    this._chatService.getChatAllByUser(1).subscribe({
+    this._chatService.getChatAllByUser(this._authenticationService.currentUserId()).subscribe({
       next: (data) => {
         console.log(data);
         this.chats = data;

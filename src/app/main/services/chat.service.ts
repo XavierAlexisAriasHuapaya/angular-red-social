@@ -58,6 +58,7 @@ export class ChatService {
         data.forEach(chat => {
           chat.chat.chatMembers = chat.chat.chatMembers.filter(member => member.user.id !== userId);
           chat.chat.name = chat.chat.chatMembers.length == 1 ? chat.chat.chatMembers[0].user.name : 'Group';
+          chat.message.seen = userId === chat.message.user.id ? true : chat.message.seen;
         });
         return data;
       })

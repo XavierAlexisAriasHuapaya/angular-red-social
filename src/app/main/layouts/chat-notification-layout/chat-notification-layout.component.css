@@ -111,12 +111,12 @@ input {
 
 .chat .active {
   color: #0866FF;
-  background-color: #c4d8f7;
+  background-color: #EBF5FF;
 }
 
 .chat button:hover {
   color: #0866FF;
-  background-color: #c4d8f7;
+  background-color: #EBF5FF;
 }
 
 .chat-message {
@@ -127,6 +127,12 @@ input {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+}
+
+.profile-message-active {
+  background-color: #c4d8f7;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .profile:hover {

@@ -71,3 +71,20 @@ fa-icon {
     padding: 0;
     background-color: green;
 }
+
+.friend-img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.friend-img-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    right: -0.1rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: green;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}

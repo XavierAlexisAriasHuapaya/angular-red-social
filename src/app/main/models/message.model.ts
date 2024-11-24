@@ -6,6 +6,8 @@ export class MessageModel {
     chat!: ChatModel;
     user!: UserModel;
     content!: string;
+    timeSeen!: Date;
+    seen!: boolean;
     createdAt!: Date;
     updatedAt!: Date;
     status!: boolean;
