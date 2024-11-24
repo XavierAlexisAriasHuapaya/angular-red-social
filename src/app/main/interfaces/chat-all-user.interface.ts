@@ -6,4 +6,5 @@ import { ChatMembers } from "./chat-members.interfaces";
 export interface ChatAllUser {
     chat: ChatModel;
     message: MessageModel;
+    messageTime: string;
 }

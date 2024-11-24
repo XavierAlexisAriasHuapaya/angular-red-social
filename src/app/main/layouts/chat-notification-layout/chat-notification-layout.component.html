@@ -36,10 +36,11 @@
             <img [src]="'../../../../assets/images/user_' + item.chat.chatMembers[0].user.id + '.jpg'" alt="User image">
             <div class="messages">
                 <div class="user">
-                    <label for="">{{item.chat.name}}</label>
+                    <label for="" class="username">{{item.chat.name}}</label>
                 </div>
                 <div class="message">
                     <p class="text-ellipsis">{{item.message.content}}</p>
+                    <span>{{item.messageTime}}</span>
                 </div>
             </div>
         </div>
