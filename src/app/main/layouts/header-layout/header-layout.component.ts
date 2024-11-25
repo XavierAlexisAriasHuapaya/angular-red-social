@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatMenuModule } from '@angular/material/menu';
-import { faBell, faGear, faHome, faMessage, faPeopleGroup, faRightFromBracket, faShop, faUser, faUserGroup, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faCode, faGear, faHome, faMessage, faPeopleGroup, faRightFromBracket, faShop, faUser, faUserGroup, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../../authentication/services/authentication.service';
 import { ChatNotificationLayoutComponent } from '../chat-notification-layout/chat-notification-layout.component';
 import { FullscreenOverlayContainer, Overlay, OverlayContainer } from '@angular/cdk/overlay';
@@ -31,6 +31,7 @@ export class HeaderLayoutComponent {
   public faBell = faBell;
   public faUser = faUser;
   public faClose = faRightFromBracket;
+  public faCode = faCode;
   public notificationsVisible: boolean = true;
 
   public openChat() {

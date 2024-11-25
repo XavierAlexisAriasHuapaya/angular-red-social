@@ -99,6 +99,12 @@ fa-icon {
     cursor: pointer;
 }
 
-.item-singout fa-icon{
+.item-singout fa-icon {
     color: black;
+}
+
+.logo {
+    font-size: 2.5rem;
+    padding: 0 0.5rem;
+    color: blue;
 }
