@@ -30,21 +30,22 @@
             </button>
         </div>
     </div>
-    <div class="chat-message">
-        @for (item of chats; track $index) {
-        <div class="profile" [class.profile-message-active]="!item.message.seen"
-            (click)="openChat(item.chat.chatMembers[0].user.id)">
+
+    @for (item of chats; track $index) {
+    <div class="grid-chat" (click)="openChat(item.chat.chatMembers[0].user.id)">
+        <div class="area-profile">
             <img [src]="'../../../../assets/images/user_' + item.chat.chatMembers[0].user.id + '.jpg'" alt="User image">
-            <div class="messages">
-                <div class="user">
-                    <label for="" class="username">{{item.chat.name}}</label>
-                </div>
-                <div class="message">
-                    <p class="text-ellipsis">{{item.message.content}}</p>
-                    <span>{{item.messageTime}}</span>
-                </div>
-            </div>
         </div>
-        }
+        <div class="area-name">
+            <label for="" class="username">{{item.chat.name}}</label>
+        </div>
+        <div class="area-message">
+            <p class="text-ellipsis">{{item.message.content}}</p>
+        </div>
+        <div class="area-timeago">
+            <label for=""><span class="icon-bell" [class.icon-bell-active]="!item.message.seen"><fa-icon [icon]="faBell"></fa-icon></span>
+                {{item.messageTime}}</label>
+        </div>
     </div>
+    }
 </div>

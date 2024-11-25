@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faEllipsis, faMaximize, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faEllipsis, faMaximize, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { ChatService } from '../../services/chat.service';
 import { ChatAllUser } from '../../interfaces/chat-all-user.interface';
 import { AuthenticationService } from '../../../authentication/services/authentication.service';
@@ -21,6 +21,7 @@ export class ChatNotificationLayoutComponent implements OnInit {
   public faMaximize = faMaximize;
   public faEllipsis = faEllipsis;
   public faPenToSquare = faPenToSquare;
+  public faBell = faBell;
   public chats: ChatAllUser[] = [];
 
   constructor() { }
