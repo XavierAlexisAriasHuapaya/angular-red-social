@@ -13,12 +13,13 @@ import { ChatCreate } from '../../interfaces/chat-create.interfaces';
 import { forkJoin } from 'rxjs';
 import { MessageCreate } from '../../interfaces/message-create.interface';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { ChatTimePipe } from '../../pipes/chat-time.pipe';
 
 @Component({
-    selector: 'app-chat',
-    imports: [FontAwesomeModule, FormsModule, CommonModule],
-    templateUrl: './chat.component.html',
-    styleUrl: './chat.component.css'
+  selector: 'app-chat',
+  imports: [FontAwesomeModule, FormsModule, CommonModule, ChatTimePipe],
+  templateUrl: './chat.component.html',
+  styleUrl: './chat.component.css'
 })
 export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
 

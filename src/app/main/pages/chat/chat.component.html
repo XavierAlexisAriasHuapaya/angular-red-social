@@ -23,7 +23,7 @@
 
         <span
             [ngClass]="{'message-datetime-left': item.messageSide === 'receiver', 'message-datetime-right': item.messageSide === 'sender'}">{{item.createdAt
-            | date: 'short'}}</span>
+            | chatTime}}</span>
         <div
             [ngClass]="{'message-left': item.messageSide === 'receiver', 'message-right': item.messageSide === 'sender'}">
             <p>{{item.content}}</p>
