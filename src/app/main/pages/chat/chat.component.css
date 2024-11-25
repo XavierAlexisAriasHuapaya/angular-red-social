@@ -121,6 +121,23 @@ fa-icon {
     font-size: 1rem;
 }
 
+.message-datetime-left {
+    align-self: flex-start;
+    max-width: 60%;
+    color: black;
+    padding-left: 1rem;
+    font-size: 1rem;
+    margin-bottom: -0.8rem;
+}
+
+.message-datetime-right {
+    align-self: flex-end;
+    max-width: 60%;
+    color: black;
+    padding-right: 1rem;
+    font-size: 1rem;
+    margin-bottom: -0.8rem;
+}
 
 .flex-container-content p {
     font-size: 1.3rem;

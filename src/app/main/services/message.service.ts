@@ -83,6 +83,7 @@ export class MessageService {
           messageSide: message.user.id === userId ? 'sender' : 'receiver'
         }));
         const currentMessages = this._messageSubject.getValue();
+        console.log(processedMessages);
         this._messageSubject.next([...currentMessages, ...processedMessages]);
       })
     );
