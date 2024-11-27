@@ -195,10 +195,18 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
       const filteredMessages = messages.filter(
         (message) => message.chat.roomCode === this._roomCode
       );
-      this.messageList = filteredMessages.map((item: any) => ({
-        ...item,
-        messageSide: item.user.id === this._authenticationService.currentUserId() ? 'sender' : 'receiver',
-      }));
+      this.messageList = filteredMessages.map((item: any) => {
+        if (item) {
+          const createdAt = item.createdAt ? item.createdAt : Date.now();
+          return ({
+            ...item,
+            createdAt: createdAt,
+            messageSide: item.user.id === this._authenticationService.currentUserId() ? 'sender' : 'receiver',
+          })
+        }
+      }
+      );
+      console.log(this.messageList);
       this.triggerScrollToBottom();
     });
   }

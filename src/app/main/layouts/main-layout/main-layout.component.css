@@ -28,3 +28,20 @@
     grid-area: footer;
     background-color: white;
 }
+
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "body body body";
+        grid-template-columns: 1fr 4fr 4fr;
+        grid-template-rows: auto 2fr;
+        min-height: 100vh;
+    }
+
+    .area-footer {
+        display: none;
+    }
+
+}

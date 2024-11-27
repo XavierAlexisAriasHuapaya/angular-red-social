@@ -52,6 +52,25 @@ input {
   border-radius: 8px;
 }
 
+@media (max-width: 768px) {
+  .container-flex {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    max-height: 80vh;
+    row-gap: 1rem;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    right: 1.5rem;
+    top: 10%;
+    left: 1.5rem;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 8px;
+  }
+}
+
 .container-title {
   display: flex;
   justify-content: space-between;
@@ -158,6 +177,7 @@ input {
     "profile message timeago";
   grid-template-columns: auto 2fr 1fr;
   column-gap: 1rem;
+  overflow-y: auto;
 }
 
 .grid-chat:hover {
@@ -250,4 +270,21 @@ input {
   100% {
     transform: rotate(0deg);
   }
+}
+
+.content-grid {
+  overflow-x: auto;
+}
+
+.content-grid::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.content-grid::-webkit-scrollbar-thumb {
+  background: #0866FF;
+  border-radius: 0.4rem;
+}
+
+.content-grid::-webkit-scrollbar-thumb:hover {
+  background: #012f79;
 }
