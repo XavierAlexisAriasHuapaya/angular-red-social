@@ -184,6 +184,15 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
     this._messageService.sendMessage(this._roomCode, messageCreate);
     this.messageInput = '';
     this.triggerScrollToBottom();
+    this._chatService.getChatOneByUserAll(messageCreate.chat.id, messageCreate.user.id).subscribe(data => {
+      let userIdReceiver = 0;
+      data.chat.chatMembers.forEach(data => {
+        if (data.user.id != messageCreate.user.id) {
+          userIdReceiver = data.user.id;
+        }
+      })
+      this._chatService.sendMessage(userIdReceiver);
+    })
   }
 
   public sendMessage() {
@@ -206,7 +215,6 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
         }
       }
       );
-      console.log(this.messageList);
       this.triggerScrollToBottom();
     });
   }

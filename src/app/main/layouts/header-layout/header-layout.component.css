@@ -145,8 +145,7 @@ fa-icon {
     display: inline-block;
 }
 
-.icon-wrapper::after {
-    content: "122";
+.badge {
     position: absolute;
     top: -1rem;
     right: -1rem;
@@ -159,4 +158,6 @@ fa-icon {
     align-items: center;
     color: white;
     font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }

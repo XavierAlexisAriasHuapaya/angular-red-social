@@ -32,6 +32,9 @@
             <li class="item" (click)="openChat()">
                 <div class="icon-wrapper">
                     <fa-icon [icon]="faMessage"></fa-icon>
+                    @if (countNotification > 0) {
+                    <span class="badge">{{ countNotification }}</span>
+                    }
                 </div>
             </li>
             <li class="item">

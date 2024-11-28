@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatMenuModule } from '@angular/material/menu';
@@ -7,6 +7,8 @@ import { AuthenticationService } from '../../../authentication/services/authenti
 import { ChatNotificationLayoutComponent } from '../chat-notification-layout/chat-notification-layout.component';
 import { FullscreenOverlayContainer, Overlay, OverlayContainer } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { ChatService } from '../../services/chat.service';
+import { ChatModel } from '../../models/chat.model';
 
 @Component({
   selector: 'app-header-layout',
@@ -15,11 +17,12 @@ import { ComponentPortal } from '@angular/cdk/portal';
   styleUrl: './header-layout.component.css',
   providers: [{ provide: OverlayContainer, useClass: FullscreenOverlayContainer }],
 })
-export class HeaderLayoutComponent {
+export class HeaderLayoutComponent implements OnInit {
 
   private _router = inject(Router);
   private _authenticationService = inject(AuthenticationService);
   private _overlay = inject(Overlay);
+  private _chatService = inject(ChatService);
 
   public faHome = faHome;
   public faUserGroup = faUserGroup;
@@ -33,6 +36,31 @@ export class HeaderLayoutComponent {
   public faClose = faRightFromBracket;
   public faCode = faCode;
   public notificationsVisible: boolean = true;
+  public countNotification: number = 0;
+
+  constructor() {
+    this._chatService.initConnectionSocket();
+  }
+  ngOnInit(): void {
+    this.getAllChatNotificationsByUser();
+    this.listenerNotification();
+  }
+
+  private getAllChatNotificationsByUser() {
+    const userId = this._authenticationService.currentUserId();
+    this._chatService.getAllChatNotificationsByUser(userId).subscribe({
+      next: (data: ChatModel[]) => {
+        this.countNotification = data.length;
+      }
+    })
+  }
+
+  public listenerNotification() {
+    this._chatService.joinUser(this._authenticationService.currentUserId());
+    this._chatService.getNotificationSubject().subscribe((data: any) => {
+      this.getAllChatNotificationsByUser();
+    });
+  }
 
   public openChat() {
     const overlayRef = this._overlay.create({
