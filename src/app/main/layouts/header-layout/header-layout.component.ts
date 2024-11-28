@@ -23,8 +23,6 @@ export class HeaderLayoutComponent implements OnInit {
   private _authenticationService = inject(AuthenticationService);
   private _overlay = inject(Overlay);
   private _chatService = inject(ChatService);
-  private _audioNotification!: HTMLAudioElement;
-  private _initialLoad: boolean = true;
 
   public faHome = faHome;
   public faUserGroup = faUserGroup;
@@ -42,9 +40,6 @@ export class HeaderLayoutComponent implements OnInit {
 
   constructor() {
     this._chatService.initConnectionSocket();
-    this._audioNotification = new Audio();
-    this._audioNotification.src = 'assets/sounds/notification.mp3'
-    this._audioNotification.load();
   }
 
   ngOnInit(): void {
@@ -65,15 +60,7 @@ export class HeaderLayoutComponent implements OnInit {
     this._chatService.joinUser(this._authenticationService.currentUserId());
     this._chatService.getNotificationSubject().subscribe((data: any) => {
       this.getAllChatNotificationsByUser();
-      if (!this._initialLoad) {
-        this.playSound();
-      }
     });
-    this._initialLoad = false;
-  }
-
-  private playSound(): void {
-    this._audioNotification.play();
   }
 
   public openChat() {

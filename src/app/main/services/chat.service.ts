@@ -66,7 +66,7 @@ export class ChatService {
     return this._chatNotificationSubject.asObservable();
   }
 
-  public sendMessage(userIdReceiver: number) {
+  public sendNotifications(userIdReceiver: number) {
     this._stompClient.send(`/app/chat/notification/${userIdReceiver}`, {}, {});
   }
 
@@ -140,7 +140,13 @@ export class ChatService {
         data.message.seen = userId === data.message.user.id ? true : data.message.seen;
         if (!data.message.seen) {
           if (userId !== data.message.user.id) {
-            this._messageService.updateSeen(data.message.id).subscribe();
+            this._messageService.updateSeen(data.message.id).subscribe({
+              next: () => {
+                const userIdAuth = this.authenticationService.currentUserId();
+                this.joinUser(userIdAuth);
+                this.sendNotifications(userIdAuth);
+              }
+            });
           }
         }
         return data;

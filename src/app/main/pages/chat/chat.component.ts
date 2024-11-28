@@ -191,7 +191,7 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
           userIdReceiver = data.user.id;
         }
       })
-      this._chatService.sendMessage(userIdReceiver);
+      this._chatService.sendNotifications(userIdReceiver);
     })
   }
 
