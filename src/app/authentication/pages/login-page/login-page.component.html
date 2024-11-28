@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="login()">
+<!-- <form [formGroup]="form" (ngSubmit)="login()">
     <div class="container-login">
         <div class="container-credentials">
             <label for="username">Username</label>
@@ -16,6 +16,37 @@
         <div class="container-forgot">
             <a href="">Forgot your password?</a>
             <a [routerLink]="['/auth/register']">New here? Sing Up</a>
+        </div>
+    </div>
+</form> -->
+
+<form [formGroup]="form" (ngSubmit)="login()">
+    <div class="container-login">
+        <div class="container-image">
+            <img src="../../../../assets/images/login.webp" alt="">
+        </div>
+        <div class="container-form">
+            <div class="form-title">
+                <label for="">Hello Again!</label>
+            </div>
+            <div class="form-subtitle">
+                <label for="">Welcome back you've been missed!</label>
+            </div>
+            <div class="container-credentials">
+                <input formControlName="email" type="text" class="username" name="username" autocomplete="off"
+                    placeholder="Enter your user">
+            </div>
+            <div class="container-credentials">
+                <input formControlName="password" type="password" class="password" name="password"
+                    placeholder="Enter your password">
+            </div>
+            <div class="container-button">
+                <button type="submit">Sign In</button>
+            </div>
+            <div class="container-forgot">
+                <a href="">Forgot your password?</a>
+                <a [routerLink]="['/auth/register']">New here? Sing Up</a>
+            </div>
         </div>
     </div>
 </form>

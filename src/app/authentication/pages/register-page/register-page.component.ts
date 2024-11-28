@@ -5,10 +5,10 @@ import { registerRequest } from '../../interfaces/register-request.interface';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-register-page',
-    imports: [ReactiveFormsModule],
-    templateUrl: './register-page.component.html',
-    styleUrl: './register-page.component.css'
+  selector: 'app-register-page',
+  imports: [ReactiveFormsModule],
+  templateUrl: './register-page.component.html',
+  styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
 
@@ -18,14 +18,18 @@ export class RegisterPageComponent {
   private registerRequest!: registerRequest;
 
   public formRegister: FormGroup = this.formBuilder.group({
+    name: ['', Validators.required],
+    lastname: ['', Validators.required],
     username: ['', Validators.required],
     password: ['', Validators.required],
     email: ['', Validators.required]
   });
 
   public register() {
-    const { username, password, email } = this.formRegister.value;
+    const { name, lastname, username, password, email } = this.formRegister.value;
     this.registerRequest = {
+      name: name,
+      lastname: lastname,
       username: username,
       password: password,
       email: email

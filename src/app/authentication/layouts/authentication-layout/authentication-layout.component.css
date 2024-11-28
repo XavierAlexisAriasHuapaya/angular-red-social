@@ -1,9 +1,14 @@
 .container-layout {
-    /* background-image: url(../../../../assets/images/background-login.jpg);
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#50BBBB, #aff8f8);
     height: 100vh;
-    background-size: cover;
-    background-position: center; */
-    background: linear-gradient(#00804b, #a5eacd);
-    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .container-layout {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
 }

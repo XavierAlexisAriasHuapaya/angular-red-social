@@ -1,56 +1,75 @@
 label {
-    font-size: 2rem;
     color: white;
 }
 
 input {
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
-    height: 3rem;
-    padding-left: 1.5rem;
+    height: 5rem;
     outline: none;
+    padding-left: 1.5rem;
+    width: calc(100% - 1.5rem);
 }
 
 .container-login {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 2fr;
+    width: 80%;
+    height: auto;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgb(77, 76, 76);
+    overflow: hidden;
+    background: rgba(230, 228, 228, 0.2);
+    backdrop-filter: blur(20px);
+}
+
+.container-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.container-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 20px;
+}
+
+.container-form {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    margin: 0 auto;
-    padding-top: 5rem;
+    padding: 1rem 0;
     row-gap: 1rem;
 }
 
-@media (max-width: 768px) {
-    .container-login {
-        width: 90%;
-    }
+.form-title,
+.form-subtitle {
+    margin: 0 auto;
+}
+
+.form-title {
+    font-size: 5rem;
+}
+
+.form-subtitle {
+    font-size: 1.4rem;
+    color: #4c4c4c;
+    padding: 0 10rem 3rem 10rem;
 }
 
 .container-credentials {
     display: flex;
     flex-direction: column;
-}
-
-.container-forgot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1rem;
-}
-
-.container-forgot a {
-    font-size: 1.5rem;
-    color: #fff;
-    text-decoration: none;
-}
-
-.container-forgot a:hover {
-    color: rgb(199, 196, 196);
+    padding: 0 10rem;
 }
 
 .container-button {
-    display: flex;
-    justify-content: center;
+    padding: 0 10rem;
 }
 
 .container-button button {
@@ -59,30 +78,87 @@ input {
     border-radius: 20px;
     border-style: none;
     color: white;
-    background: linear-gradient(#00804b, #a5eacd);
-    height: 3rem;
+    background-color: #39c4c4;
+    height: 5rem;
     cursor: pointer;
     transition: 0.5s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    padding: 0;
 }
 
 .container-button button:hover {
-    background: linear-gradient(#a5eacd, #00804b);
+    background-color: #13c2c2;
     transform: scale(1.05);
 }
 
-.container-button button {
-    width: 50%;
+.container-forgot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    margin-top: 1.5rem;
 }
 
+.container-forgot a {
+    font-size: 1.5rem;
+    color: #4c4c4c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.container-forgot a:hover {
+    color: black;
+}
+
+
 @media (max-width: 768px) {
-    .container-button button {
-        width: 100%;
+    input {
+        height: 3.5rem;
+    }
+
+    .container-login {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+    }
+
+    .container-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .container-image img {
+        width: 60%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .container-form {
+        padding: 0 0 1rem 0;
+    }
+
+    .form-title {
+        font-size: 3rem;
+    }
+
+    .form-subtitle {
+        display: none;
+    }
+
+    .container-credentials {
+        padding: 0 2rem;
+    }
+
+    .container-button {
+        padding: 0 2rem;
     }
 
     .container-button button {
-        color: white;
-        font-size: 1.8rem;
-        background-color: #7e25b1;
+        height: 3.5rem;
     }
+
 }
